@@ -69,7 +69,7 @@ const App = () => {
         <>
           <Navbar />
           <Mainroutes />
-          {/* <Footer /> */}
+          <Footer />
         </>
       )}
     </>
