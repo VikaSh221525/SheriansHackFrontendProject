@@ -20,7 +20,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <hr className='mt-2 mb-5 opacity-10' />
+            <hr className='mt-3 mb-3 opacity-10' />
 
             {/* mid */}
             <div className='flex justify-between items-center'>
@@ -51,7 +51,7 @@ const Navbar = () => {
                     <span className='flex gap-2 items-center hover:text-blue-500'><ChartColumnStacked className='w-5 h-5' /> <p>All Categories</p> </span>
                 </NavLink>
                 <motion.span whileHover={{ y: -1, scale: 1.05 }} whileTap={{ y: 0, scale: 1 }}>
-                    <NavLink className='hover:text-blue-500'>SmatPhones</NavLink>
+                    <NavLink className='hover:text-blue-500'>SmartPhones</NavLink>
                 </motion.span>
                 <motion.span whileHover={{ y: -1, scale: 1.05 }} whileTap={{ y: 0, scale: 1 }}>
                     <NavLink className='hover:text-blue-500'>Laptops</NavLink>
@@ -75,7 +75,7 @@ const Navbar = () => {
                     <NavLink className='hover:text-blue-500'>Gaming</NavLink>
                 </motion.span>
                 <motion.span whileHover={{ y: -1, scale: 1.05 }} whileTap={{ y: 0, scale: 1 }}>
-                    <NavLink className='hover:text-blue-500'><i class="ri-price-tag-3-fill"></i> Deals </NavLink>
+                    <NavLink className='text-blue-500'><i class="ri-price-tag-3-fill"></i> Deals </NavLink>
                 </motion.span>
             </div>
 

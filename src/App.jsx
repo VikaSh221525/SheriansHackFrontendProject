@@ -68,7 +68,7 @@ const App = () => {
       {showmain && (
         <>
           <Navbar />
-          {/* <Mainroutes /> */}
+          <Mainroutes />
           {/* <Footer /> */}
         </>
       )}
