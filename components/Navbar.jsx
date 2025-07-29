@@ -24,7 +24,7 @@ const Navbar = () => {
 
             {/* mid */}
             <div className='flex justify-between items-center'>
-                <NavLink className='flex gap-2 items-center'><p className='font-bold text-4xl text-blue-600'>TechPulse</p></NavLink>
+                <NavLink to='/' className='flex gap-2 items-center'><p className='font-bold text-4xl text-blue-600'>TechPulse</p></NavLink>
                 <div className='flex items-center rounded-full px-4 py-2 w-[500px] border border-gray-200 focus-within:border-blue-600'>
                     <Search className='text-gray-400 w-5 h-5 mr-2' />
                     <input type="text" placeholder='Search for products, brands, and more...' className='outline-none w-full text-gray-700 placeholder-gray-400' />
@@ -38,7 +38,7 @@ const Navbar = () => {
                         <i class="ri-shopping-cart-2-fill text-2xl"></i>
                         <span className='bg-blue-500 absolute -top-2 -right-1 rounded-full px-1.5 text-sm text-white'>0</span>
                     </div>
-                    <NavLink className='bg-gray-200 py-1 px-2 rounded'><span><i class="ri-user-3-line text-xl text-blue-500"></i> Login/SignUp</span></NavLink>
+                    <NavLink to='/login' className='bg-gray-200 py-1 px-2 rounded'><span><i class="ri-user-3-line text-xl text-blue-500"></i> Login/SignUp</span></NavLink>
                 </div>
             </div>
 
@@ -48,7 +48,7 @@ const Navbar = () => {
 
             <div className='flex justify-between items-center'>
                 <motion.span whileHover={{ y: -1, scale: 1.05 }} whileTap={{ y: 0, scale: 1 }}>
-                <NavLink>
+                <NavLink to='/products'>
                     <span className='flex gap-2 items-center hover:text-blue-500'><ChartColumnStacked className='w-5 h-5' /> <p>All Categories</p> </span>
                 </NavLink>
                 </motion.span>
