@@ -36,18 +36,18 @@ const Home = () => {
                         </div>
                     </div>
                 </SwiperSlide>
-                <SwiperSlide className='bg-blue-300'>Slide 3</SwiperSlide>
+                <SwiperSlide className='bg-blue-300'><img className='w-full h-full object-cover' src="//www.boat-lifestyle.com/cdn/shop/files/Artboard_2_600a8b70-ef8e-45fa-9353-1db13753d965_600x.png?v=1752776780" alt="" /></SwiperSlide>
             </Swiper>
 
             {/* Hot Deal Products */}
             <div className="mt-20 bg-gray-50 py-10 px-20">
                 <h1 className="text-5xl font-bold mb-8 text-gray-900">Today's Hot Deal</h1>
                 <div className="flex gap-6 justify-start">
-                    <div className="relative bg-white rounded-3xl shadow-xl flex flex-col items-center gap-4 w-72 hover:shadow-2xl transition-shadow duration-300">
+                    <div className="relative bg-white rounded-3xl shadow-xl flex flex-col items-center gap-4 w-72 hover:shadow-2xl transition-shadow duration-300 group overflow-hidden">
                         {/* Product Image */}
-                        <div className="flex-shrink-0 relative">
+                        <div className="flex-shrink-0 relative ">
                             <img
-                                className="object-contain rounded-t-2xl border border-gray-200 bg-gray-100"
+                                className="object-contain rounded-t-2xl border border-gray-200 bg-gray-100 group-hover:scale-102 duration-200"
                                 src="https://elexy-demo.myshopify.com/cdn/shop/files/product-11_ed84a993-fd45-4e85-a944-6c37d991f260.png?v=1713259767&width=990"
                                 alt="Samsung TV"
                             />
@@ -60,14 +60,6 @@ const Home = () => {
                                 <span className="text-2xl font-bold text-green-600">Rs. 19,000</span>
                                 <span className="text-base text-gray-400 line-through">Rs. 21,000</span>
                                 <span className="bg-yellow-100 text-yellow-800 text-xs font-medium px-2 py-1 rounded">Limited Time Offer</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <button className="px-4 py-2 bg-black text-white rounded-xl font-semibold shadow hover:bg-gray-800 transition-colors duration-200">
-                                    Buy Now
-                                </button>
-                                <button className="px-4 py-2 border border-black text-black rounded-xl font-semibold hover:bg-gray-100 transition-colors duration-200">
-                                    Add to Cart
-                                </button>
                             </div>
                         </div>
                     </div>

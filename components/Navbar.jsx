@@ -78,8 +78,6 @@ const Navbar = () => {
                     <NavLink className='text-blue-500'><i class="ri-price-tag-3-fill"></i> Deals </NavLink>
                 </motion.span>
             </div>
-
-
         </header>
     )
 }
