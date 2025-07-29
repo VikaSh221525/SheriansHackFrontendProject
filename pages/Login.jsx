@@ -2,14 +2,15 @@ import React from 'react'
 import { useForm } from 'react-hook-form';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { Link, NavLink } from 'react-router-dom';
-import { nanoid } from '@reduxjs/toolkit';
-import { toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { asyncloginuser } from '../store/actions/UserAction';
 
 const Login = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
+    const dispatch = useDispatch();
 
     const LoginHandler = (user) => {
-        console.log(user);
+        dispatch(asyncloginuser(user))
         reset();
     }
     return (

@@ -5,27 +5,23 @@ import Mainroutes from '../routes/Mainroutes';
 import Footer from '../components/Footer';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
-import { asyncgetUsers } from '../store/reducers/UserActions';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+import { asynccurrentuser } from '../store/actions/UserAction';
 
 const App = () => {
-
-  const user = useSelector((state) => state);
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   const [count, setcount] = useState(0)
   const [showmain, setshowmain] = useState(false)
   const preloader = useRef(null);
   const loadingtext = useRef(null)
 
-  useEffect(() => {
-    if (showmain) {
-      dispatch(asyncgetUsers());
+  useEffect(()=>{
+    if(showmain){
+      dispatch(asynccurrentuser());
     }
   }, [showmain]);
-  // useEffect(() => {
-  //   console.log('User:', user);
-  // }, [user]);
+
 
   useEffect(() => {
     const interval = setInterval(() => {

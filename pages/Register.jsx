@@ -4,14 +4,19 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { nanoid } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
+import { asyncregisteruser } from '../store/actions/UserAction';
+import { useDispatch } from 'react-redux';
 
 const Register = () => {
     const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const navigate = useNavigate();
+    const dispatch = useDispatch();
 
     const RegisterHandler = (user) => {
         user.id = nanoid();
-        console.log(user);
+        user.isAdmin = false;
+        dispatch(asyncregisteruser(user))
+        
         toast.success('Registration successful!');
         reset();
         navigate('/login');
