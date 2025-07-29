@@ -5,13 +5,27 @@ import Mainroutes from '../routes/Mainroutes';
 import Footer from '../components/Footer';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
+import { asyncgetUsers } from '../store/reducers/UserActions';
+import { useDispatch, useSelector } from 'react-redux';
 
 const App = () => {
+
+  const user = useSelector((state) => state);
+  const dispatch = useDispatch()
+
   const [count, setcount] = useState(0)
   const [showmain, setshowmain] = useState(false)
   const preloader = useRef(null);
   const loadingtext = useRef(null)
 
+  useEffect(() => {
+    if (showmain) {
+      dispatch(asyncgetUsers());
+    }
+  }, [showmain]);
+  // useEffect(() => {
+  //   console.log('User:', user);
+  // }, [user]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -22,14 +36,14 @@ const App = () => {
         }
         return prev + 1;
       })
-    }, 30)
+    }, 10)
     return () => clearInterval(interval)
   }, [])
 
   useGSAP(() => {
-    if(count === 100){
+    if (count === 100) {
       const tl = gsap.timeline({
-        onComplete: ()=>{
+        onComplete: () => {
           setshowmain(true);
         }
       })
@@ -37,13 +51,13 @@ const App = () => {
         y: '-100vh',
         opacity: 0,
         duration: 2,
-        ease:'power2.inOut'
+        ease: 'power2.inOut'
       })
       tl.to(loadingtext.current, {
-        y: '100px',
+        y: '50px',
         opacity: 0,
         duration: 2,
-        ease : 'power2.inOut',
+        ease: 'power2.inOut',
       }, '<')
     }
   }, [count])

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { use, useEffect, useRef, useState } from 'react'
 import { Search, ChartColumnStacked } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import { motion } from "motion/react"
@@ -38,7 +38,7 @@ const Navbar = () => {
                         <i class="ri-shopping-cart-2-fill text-2xl"></i>
                         <span className='bg-blue-500 absolute -top-2 -right-1 rounded-full px-1.5 text-sm text-white'>0</span>
                     </div>
-                    <i class="ri-user-3-line text-xl bg-gray-200 rounded-full px-2 py-1 text-blue-500"></i>
+                    <NavLink className='bg-gray-200 py-1 px-2 rounded'><span><i class="ri-user-3-line text-xl text-blue-500"></i> Login/SignUp</span></NavLink>
                 </div>
             </div>
 
@@ -47,9 +47,11 @@ const Navbar = () => {
             {/* bottom */}
 
             <div className='flex justify-between items-center'>
+                <motion.span whileHover={{ y: -1, scale: 1.05 }} whileTap={{ y: 0, scale: 1 }}>
                 <NavLink>
                     <span className='flex gap-2 items-center hover:text-blue-500'><ChartColumnStacked className='w-5 h-5' /> <p>All Categories</p> </span>
                 </NavLink>
+                </motion.span>
                 <motion.span whileHover={{ y: -1, scale: 1.05 }} whileTap={{ y: 0, scale: 1 }}>
                     <NavLink className='hover:text-blue-500'>SmartPhones</NavLink>
                 </motion.span>
