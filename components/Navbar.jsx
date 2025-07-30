@@ -2,8 +2,12 @@ import React, { use, useEffect, useRef, useState } from 'react'
 import { Search, ChartColumnStacked } from 'lucide-react'
 import { NavLink } from 'react-router-dom'
 import { motion } from "motion/react"
+import { useSelector } from 'react-redux'
 
 const Navbar = () => {
+    const user = useSelector((state) => state.user.data)
+    console.log(user);
+
     return (
         <header className='px-20 py-2 bg-white border-b border-gray-200'>
             {/* top */}
@@ -16,7 +20,26 @@ const Navbar = () => {
                     <div className='flex gap-5'>
                         <NavLink className='flex gap-2 items-center group'><i class="ri-percent-fill text-gray-400 group-hover:text-blue-500"></i> <p className='text-gray-400 group-hover:text-blue-500'>Today's Deals</p> </NavLink>
                         <NavLink className='flex gap-2 items-center group'><i class="ri-customer-service-2-fill text-gray-400 group-hover:text-blue-500"></i> <p className='text-gray-400 group-hover:text-blue-500'>Support</p> </NavLink>
-                        <NavLink className='flex gap-2 items-center group'><i class="ri-user-3-line text-gray-400 group-hover:text-blue-500"></i> <p className='text-gray-400 group-hover:text-blue-500'>Account</p> </NavLink>
+                        <div className='relative group cursor-pointer'>
+                            <div className='flex gap-2 items-center'>
+                                <i class="ri-user-3-line text-gray-400 group-hover:text-blue-500"></i> <p className='text-gray-400 group-hover:text-blue-500'>Account</p>
+                            </div>
+                            <div
+                                className="absolute -right-15 mt-2 bg-sky-50 shadow-lg rounded-md p-4 w-48 z-50 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                            >
+                                <NavLink className="w-full mb-2 text-gray-800 hover:text-blue-400 transition-all duration-200 py-1">
+                                    Logout/UserInfo
+                                </NavLink>
+                                {user? <> 
+                                {user && user?.isAdmin && (<NavLink to='/admin/create-product' className="w-full text-gray-800 hover:text-blue-400 transition-all duration-200 py-1 block ">
+                                    Create Product
+                                </NavLink>)} 
+                                </>:<></>}
+                                <NavLink to='#' className="w-full text-gray-800 hover:text-blue-400 transition-all duration-200 py-1 block">
+                                    Update Product
+                                </NavLink>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -48,9 +71,9 @@ const Navbar = () => {
 
             <div className='flex justify-between items-center'>
                 <motion.span whileHover={{ y: -1, scale: 1.05 }} whileTap={{ y: 0, scale: 1 }}>
-                <NavLink to='/products'>
-                    <span className='flex gap-2 items-center hover:text-blue-500'><ChartColumnStacked className='w-5 h-5' /> <p>All Categories</p> </span>
-                </NavLink>
+                    <NavLink to='/products'>
+                        <span className='flex gap-2 items-center hover:text-blue-500'><ChartColumnStacked className='w-5 h-5' /> <p>All Categories</p> </span>
+                    </NavLink>
                 </motion.span>
                 <motion.span whileHover={{ y: -1, scale: 1.05 }} whileTap={{ y: 0, scale: 1 }}>
                     <NavLink className='hover:text-blue-500'>SmartPhones</NavLink>

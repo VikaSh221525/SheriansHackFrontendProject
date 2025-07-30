@@ -4,6 +4,8 @@ import Home from '../pages/Home'
 import Product from '../pages/Product'
 import Login from '../pages/Login'
 import Register from '../pages/Register'
+import CreateProduct from '../pages/admin/CreateProduct'
+import UpdateProduct from '../pages/admin/UpdateProduct'
 
 const Mainroutes = () => {
     return (
@@ -12,6 +14,8 @@ const Mainroutes = () => {
             <Route path='/products' element={<Product/>} ></Route>
             <Route path='/login' element={<Login/>} ></Route>
             <Route path='/register' element={<Register/>} ></Route>
+            <Route path='/admin/create-product' element={<CreateProduct/>} ></Route>
+            <Route path='/admin/update-product/:id' element={<UpdateProduct/>} ></Route>
         </Routes>
     )
 }
