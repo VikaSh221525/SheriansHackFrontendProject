@@ -22,15 +22,15 @@ export const asyncloginuser = (user) => async () => {
 
     }
 }
-export const asynclogoutuser = (user) => async () => {
+export const asynclogoutuser = (user) => async (dispatch, getState) => {
     try {
 
         localStorage.removeItem("user");
+        dispatch(removeuser());
         toast.success("Logout successful!");
 
     } catch (err) {
         console.log(err);
-
     }
 }
 export const asynccurrentuser = () => async (dispatch, getState) => {

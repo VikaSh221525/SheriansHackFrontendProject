@@ -1,12 +1,19 @@
 import React, { use, useEffect, useRef, useState } from 'react'
 import { Search, ChartColumnStacked } from 'lucide-react'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { motion } from "motion/react"
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
+import { asynclogoutuser } from '../store/actions/UserAction'
 
 const Navbar = () => {
     const user = useSelector((state) => state.user.data)
-    console.log(user);
+    const dispatch = useDispatch()
+    const navigate = useNavigate()
+
+    const logoutuserhandler = () => {
+        dispatch(asynclogoutuser());
+        navigate('/login');
+    }
 
     return (
         <header className='px-20 py-2 bg-white border-b border-gray-200'>
@@ -27,9 +34,9 @@ const Navbar = () => {
                             <div
                                 className="absolute top-full -right-15 bg-sky-50 shadow-lg rounded-md p-4 w-48 z-50 text-center opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
                             >
-                                <NavLink className="w-full mb-2 text-gray-800 hover:text-blue-400 transition-all duration-200 py-1">
+                                <button onClick={logoutuserhandler} className="w-full mb-2 text-gray-800 hover:text-blue-400 transition-all duration-200 py-1">
                                     Logout/UserInfo
-                                </NavLink>
+                                </button>
                                 {user ? <>
                                     {user && user?.isAdmin && (
                                         <>

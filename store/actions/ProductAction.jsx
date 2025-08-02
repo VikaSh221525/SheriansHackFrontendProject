@@ -9,7 +9,6 @@ export const asyncloadproducts = () => async (dispatch, getState)=>{
 
     }catch(err){
         console.log(err);
-        
     }
 }
 
@@ -23,6 +22,25 @@ export const asynccreateproduct = (product)=> async (dispatch, getState)=>{
 
     }catch(err){
         console.log(err);
-        
+    }
+}
+
+export const asyncupdateproduct = (id,product) => async (dispatch, getState) => {
+    try {
+        await axios.patch(`/products/`+ id, product);
+        toast.success("Product updated successfully!");
+        dispatch(asyncloadproducts());
+    } catch (err) {
+        console.log(err);
+    }
+}
+
+export const asyncdeleteproduct = (id) => async (dispatch, getState) => {
+    try {
+        await axios.delete(`/products/` + id);
+        toast.success("Product deleted successfully!");
+        dispatch(asyncloadproducts());
+    } catch (err) {
+        console.log(err);
     }
 }

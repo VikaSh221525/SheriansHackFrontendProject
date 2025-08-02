@@ -1,19 +1,10 @@
 {
   "products": [
     {
-      "id": "xyaIAOpRDZ7zsE1FeMhpU",
-      "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
-      "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
-      "price": "64",
-      "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
-      "category": "Accessories",
-      "discount": "0"
-    },
-    {
       "id": "iwUIrnMvdrhFOaJRkyuC-",
       "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
       "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
-      "price": "597",
+      "price": "400",
       "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
       "category": "Laptop",
       "discount": "11"
@@ -40,27 +31,6 @@
       "id": "ahpnEABkfJHPdmXfZgo3t",
       "username": "LalitPancholi",
       "email": "Lalit@pancholi",
-      "password": "456",
-      "isAdmin": false
-    },
-    {
-      "id": "ZkmvUHMOciA5SEDD2Iv59",
-      "username": "vineet",
-      "email": "vineet@mail.com",
-      "password": "789",
-      "isAdmin": false
-    },
-    {
-      "id": "udDwJfmPP2HBLlaLAC5g8",
-      "username": "lalit44",
-      "email": "lalit@mail.com",
-      "password": "456",
-      "isAdmin": false
-    },
-    {
-      "id": "V_2ShsL7TSX2-c0VuFv-_",
-      "username": "abhishek",
-      "email": "cdhgch@fidfi",
       "password": "456",
       "isAdmin": false
     }
