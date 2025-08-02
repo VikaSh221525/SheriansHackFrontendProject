@@ -22,13 +22,10 @@ export const asyncloginuser = (user) => async () => {
 
     }
 }
-export const asynclogoutuser = (user) => async (dispatch, getState) => {
+export const asynclogoutuser = () => async (dispatch, getState) => {
     try {
-
         localStorage.removeItem("user");
         dispatch(removeuser());
-        toast.success("Logout successful!");
-
     } catch (err) {
         console.log(err);
     }
@@ -38,6 +35,23 @@ export const asynccurrentuser = () => async (dispatch, getState) => {
         const user = JSON.parse(localStorage.getItem("user"));
         user ? dispatch(loaduser(user)) : toast.info("User not logged in")
 
+    } catch (err) {
+        console.log(err);
+    }
+}
+export const asyncupdateuser = (id, user) => async (dispatch, getState) => {
+    try {
+        const data = await axios.patch('/users/'+id, user);
+        localStorage.setItem("user", JSON.stringify(data));
+        dispatch(asynccurrentuser())
+    } catch (err) {
+        console.log(err);
+    }
+}
+export const asyncdeleteuser = (id) => async (dispatch, getState) => {
+    try {
+        await axios.delete('/users/' + id);
+        dispatch(asynclogoutuser());
     } catch (err) {
         console.log(err);
     }
