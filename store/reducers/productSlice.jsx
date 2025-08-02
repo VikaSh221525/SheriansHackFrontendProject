@@ -9,11 +9,11 @@ const productSlice = createSlice({
     name: "product",
     initialState,
     reducers: {
-        loaduser: (state, action)=>{
+        loadproduct: (state, action)=>{
             state.products = action.payload;
         }
     }
 })
 
 export default productSlice.reducer;
-export const { loaduser } = productSlice.actions;
+export const { loadproduct } = productSlice.actions;

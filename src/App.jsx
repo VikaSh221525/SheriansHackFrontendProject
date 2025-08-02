@@ -7,6 +7,7 @@ import { useGSAP } from '@gsap/react';
 import gsap from 'gsap'
 import { useDispatch } from 'react-redux';
 import { asynccurrentuser } from '../store/actions/UserAction';
+import { asyncloadproducts } from '../store/actions/ProductAction';
 
 const App = () => {
   const dispatch = useDispatch();
@@ -14,11 +15,17 @@ const App = () => {
   const [count, setcount] = useState(0)
   const [showmain, setshowmain] = useState(false)
   const preloader = useRef(null);
-  const loadingtext = useRef(null)
+  const loadingtext = useRef(null);
 
   useEffect(()=>{
     if(showmain){
       dispatch(asynccurrentuser());
+    }
+  }, [showmain]);
+  
+  useEffect(()=>{
+    if(showmain){
+      dispatch(asyncloadproducts());
     }
   }, [showmain]);
 

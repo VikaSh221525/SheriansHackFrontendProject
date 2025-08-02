@@ -20,24 +20,25 @@ const Navbar = () => {
                     <div className='flex gap-5'>
                         <NavLink className='flex gap-2 items-center group'><i class="ri-percent-fill text-gray-400 group-hover:text-blue-500"></i> <p className='text-gray-400 group-hover:text-blue-500'>Today's Deals</p> </NavLink>
                         <NavLink className='flex gap-2 items-center group'><i class="ri-customer-service-2-fill text-gray-400 group-hover:text-blue-500"></i> <p className='text-gray-400 group-hover:text-blue-500'>Support</p> </NavLink>
-                        <div className='relative group cursor-pointer'>
+                        <div className='relative cursor-pointer group'>
                             <div className='flex gap-2 items-center'>
                                 <i class="ri-user-3-line text-gray-400 group-hover:text-blue-500"></i> <p className='text-gray-400 group-hover:text-blue-500'>Account</p>
                             </div>
                             <div
-                                className="absolute -right-15 mt-2 bg-sky-50 shadow-lg rounded-md p-4 w-48 z-50 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-200"
+                                className="absolute top-full -right-15 bg-sky-50 shadow-lg rounded-md p-4 w-48 z-50 text-center opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-opacity duration-200"
                             >
                                 <NavLink className="w-full mb-2 text-gray-800 hover:text-blue-400 transition-all duration-200 py-1">
                                     Logout/UserInfo
                                 </NavLink>
-                                {user? <> 
-                                {user && user?.isAdmin && (<NavLink to='/admin/create-product' className="w-full text-gray-800 hover:text-blue-400 transition-all duration-200 py-1 block ">
-                                    Create Product
-                                </NavLink>)} 
-                                </>:<></>}
-                                <NavLink to='#' className="w-full text-gray-800 hover:text-blue-400 transition-all duration-200 py-1 block">
-                                    Update Product
-                                </NavLink>
+                                {user ? <>
+                                    {user && user?.isAdmin && (
+                                        <>
+                                            <NavLink to='/admin/create-product' className="w-full text-gray-800 hover:text-blue-400 transition-all duration-200 py-1 block ">
+                                                Create Product
+                                            </NavLink>
+                                        </>
+                                    )}
+                                </> : <></>}
                             </div>
                         </div>
                     </div>
@@ -61,7 +62,7 @@ const Navbar = () => {
                         <i class="ri-shopping-cart-2-fill text-2xl"></i>
                         <span className='bg-blue-500 absolute -top-2 -right-1 rounded-full px-1.5 text-sm text-white'>0</span>
                     </div>
-                    <NavLink to='/login' className='bg-gray-200 py-1 px-2 rounded'><span><i class="ri-user-3-line text-xl text-blue-500"></i> Login/SignUp</span></NavLink>
+                    {user ? <><NavLink to='/login' className='bg-gray-200 py-1 px-2 rounded'><span><i class="ri-user-3-line text-xl text-blue-500"></i> {user.username} </span></NavLink></> : <><NavLink to='/login' className='bg-gray-200 py-1 px-2 rounded'><span><i class="ri-user-3-line text-xl text-blue-500"></i> Login/SignUp</span></NavLink></>}
                 </div>
             </div>
 

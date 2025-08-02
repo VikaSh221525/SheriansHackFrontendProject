@@ -1,14 +1,31 @@
 {
   "products": [
     {
-      "id": "1",
-      "title": "Sony WH-1000XM3 Bluetooth Wireless Over Ear Headphones with Mic (Silver)",
-      "image": "https://storage.googleapis.com/fir-auth-1c3bc.appspot.com/1692947383286-714WUJlhbLS._SL1500_.jpg",
-      "price": 773,
-      "description": "Digital noise cancelling : Industry leading Active Noise Cancellation (ANC) lends a personalized, virtually soundproof experience at any situation\r\nHi-Res Audio : A built-in amplifier integrated in HD Noise Cancelling Processor QN1 realises the best-in-class signal-to-noise ratio and low distortion for portable devices.\r\nDriver Unit : Powerful 40-mm drivers with Liquid Crystal Polymer (LCP) diaphragms make the headphones perfect for handling heavy beats and can reproduce a full range of frequencies up to 40 kHz.\r\nVoice assistant : Alexa enabled (In-built) for voice access to music, information and more. Activate with a simple touch. Frequency response: 4 Hz-40,000 Hz",
-      "color": "silver",
-      "category": "audio",
-      "discount": 11
+      "id": "xyaIAOpRDZ7zsE1FeMhpU",
+      "image": "https://fakestoreapi.com/img/61IBBVJvSDL._AC_SY879_.jpg",
+      "title": "WD 2TB Elements Portable External Hard Drive - USB 3.0",
+      "price": "64",
+      "description": "USB 3.0 and USB 2.0 Compatibility Fast data transfers Improve PC Performance High Capacity; Compatibility Formatted NTFS for Windows 10, Windows 8.1, Windows 7; Reformatting may be required for other operating systems; Compatibility may vary depending on user’s hardware configuration and operating system",
+      "category": "Accessories",
+      "discount": "0"
+    },
+    {
+      "id": "iwUIrnMvdrhFOaJRkyuC-",
+      "image": "https://fakestoreapi.com/img/81QpkIctqPL._AC_SX679_.jpg",
+      "title": "Acer SB220Q bi 21.5 inches Full HD (1920 x 1080) IPS Ultra-Thin",
+      "price": "597",
+      "description": "21. 5 inches Full HD (1920 x 1080) widescreen IPS display And Radeon free Sync technology. No compatibility for VESA Mount Refresh Rate: 75Hz - Using HDMI port Zero-frame design | ultra-thin | 4ms response time | IPS panel Aspect ratio - 16: 9. Color Supported - 16. 7 million colors. Brightness - 250 nit Tilt angle -5 degree to 15 degree. Horizontal viewing angle-178 degree. Vertical viewing angle-178 degree 75 hertz",
+      "category": "Laptop",
+      "discount": "11"
+    },
+    {
+      "id": "mi6cfGHLf_YXM92lNNPdc",
+      "image": "https://fakestoreapi.com/img/81Zt42ioCgL._AC_SX679_.jpg",
+      "title": "Samsung 49-Inch CHG90 144Hz Curved Gaming Monitor (LC49HG90DMNXZA) – Super Ultrawide Screen QLED ",
+      "price": "1000",
+      "description": "49 INCH SUPER ULTRAWIDE 32:9 CURVED GAMING MONITOR with dual 27 inch screen side by side QUANTUM DOT (QLED) TECHNOLOGY, HDR support and factory calibration provides stunningly realistic and accurate color and contrast 144HZ HIGH REFRESH RATE and 1ms ultra fast response time work to eliminate motion blur, ghosting, and reduce input lag\",\n",
+      "category": "Laptop",
+      "discount": "1"
     }
   ],
   "users": [
@@ -23,6 +40,27 @@
       "id": "ahpnEABkfJHPdmXfZgo3t",
       "username": "LalitPancholi",
       "email": "Lalit@pancholi",
+      "password": "456",
+      "isAdmin": false
+    },
+    {
+      "id": "ZkmvUHMOciA5SEDD2Iv59",
+      "username": "vineet",
+      "email": "vineet@mail.com",
+      "password": "789",
+      "isAdmin": false
+    },
+    {
+      "id": "udDwJfmPP2HBLlaLAC5g8",
+      "username": "lalit44",
+      "email": "lalit@mail.com",
+      "password": "456",
+      "isAdmin": false
+    },
+    {
+      "id": "V_2ShsL7TSX2-c0VuFv-_",
+      "username": "abhishek",
+      "email": "cdhgch@fidfi",
       "password": "456",
       "isAdmin": false
     }

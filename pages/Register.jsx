@@ -18,7 +18,7 @@ const Register = () => {
         dispatch(asyncregisteruser(user))
         
         toast.success('Registration successful!');
-        reset();
+        // reset();
         navigate('/login');
     }
     return (

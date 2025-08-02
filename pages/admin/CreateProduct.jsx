@@ -2,17 +2,16 @@ import { nanoid } from '@reduxjs/toolkit';
 import React from 'react'
 import { useForm } from 'react-hook-form';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
+import { asynccreateproduct } from '../../store/actions/ProductAction';
 
 const CreateProduct = () => {
     const { register, reset, handleSubmit, formState: { errors } } = useForm()
     const dispatch = useDispatch();
-    const navigate = useNavigate();
     const createproducthandler = (product) => {
         product.id = nanoid();
         console.log(product);
+        dispatch(asynccreateproduct(product))
         reset()
-        
     }
 
     return (
@@ -56,8 +55,7 @@ const CreateProduct = () => {
                         </div>
                         <div>
                             <label className='text-gray-700 font-semibold'>Discount</label>
-                            <input type="number" placeholder='Enter Discount' {...register("discount", { required: "Price is required" })} className='w-full px-4 py-2 rounded-4xl border-2 border-gray-300 focus:outline-none focus:border-blue-500 mt-2' />
-                            {errors.discount && <p className='text-red-500 text-sm'>{errors.discount.message}</p>}
+                            <input type="number" placeholder='Enter Discount' {...register("discount")} className='w-full px-4 py-2 rounded-4xl border-2 border-gray-300 focus:outline-none focus:border-blue-500 mt-2' />
                         </div>
                         <div>
                             <button type='submit' className='bg-blue-500 text-white px-12 py-2 rounded-4xl hover:bg-blue-600 transition duration-200 cursor-pointer shadow-md'>Create Product</button>
